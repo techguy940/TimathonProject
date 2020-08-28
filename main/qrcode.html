@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QR Code Generator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles3.css">
+</head>
+<body a link="white" vlink="white">
+	<a href="index.html" class="homeA"><img src='home-page (3).png' alt="Return to Home" class="home"></a>
+	<div class="main">
+		<h2>QR Code Generator</h2>
+		<canvas class="qr" id="qr"></canvas>
+		<div class="downloadDiv" id="downloadDiv" onclick="downloadQR();">
+			<a id="download" class="download" download>Download</a>
+		</div>
+		<textarea class="qrText" id="qrText" placeholder="Write Text Here"></textarea>
+		<a class="submit" onclick="generateQRCode();">Generate QR</a>
+
+	</div>
+</body>
+<script>
+	function generateQRCode() {
+		var qr;
+		var qrtext = document.getElementById("qrText").value;
+		qr = new QRious({
+			element: document.getElementById('qr'),
+			size: 250,
+			value: qrtext
+		});
+		document.getElementById('downloadDiv').className += " active";
+	}
+	function downloadQR(){
+		let downloadLink = document.getElementById('download');
+		let canvas = document.getElementById('qr');
+		let dataURL = canvas.toDataURL('image/png');
+		console.log(dataURL);
+		downloadLink.setAttribute('href', dataURL);
+	}
+</script>
+</html>

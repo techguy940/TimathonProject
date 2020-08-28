@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text-To-Speech Generator</title>
+	<link rel="stylesheet" type="text/css" href="styles4.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body a link="white" vlink="white">
+	<a href="index.html" class="homeA"><img src='home-page (3).png' alt="Return to Home" class="home"></a>
+	<div id="main" class="main">
+		<h2>Text-To-Speech Generator</h2>
+		<textarea class="ttsText" id="ttsText" placeholder="Write Text Here"></textarea>
+		<div id="submitClass" class="submitClass" onclick="textToSpeech();">
+			<a class="submit">Process Text</a>
+		</div>
+		<div id="clearClass" class="clearClass" onclick="clearText();">
+			<a class="clear" onclick="clearText():">Clear Text</a>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function textToSpeech(){
+		var msg = new SpeechSynthesisUtterance();
+		msg.text = document.getElementById("ttsText").value;
+		window.speechSynthesis.speak(msg);
+	}
+
+	function clearText(){
+		document.getElementById("ttsText").value = "";
+	}
+</script>
+</html>

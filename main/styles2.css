@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+	background: #f8f8f8;
+	user-select: none;
+}
+
+.main
+{
+	text-align: center;
+	justify-content: center;
+	width: 450px;
+	position: relative;
+}
+
+.main h2 
+{
+	font-weight: 600;
+	color: #696969;
+	font-size: 40px;
+}
+
+.main .pass
+{
+	color: #696969;
+	cursor: pointer;
+	bottom: 75px;
+	width: 60%;
+	left: 180px;
+	position: absolute;
+	font-weight: 600;
+	font-size: 26px;
+	border-radius: 10px;
+	height: 60px;
+	outline: none;
+}
+
+.main .pass:hover {
+  background-color: #3e8e41;
+  color: white;
+  transition: 0.5s
+}
+
+.main input[id="passLength"]
+{
+	position: relative;
+	width: 30%;
+	height: 60px;
+	border: none;
+	margin: 15px 0 20px;
+	background: transparent;
+	outline: none;
+	padding: 0 24px;
+	font-size: 24px;
+	letter-spacing: 2px;
+	box-sizing: border-box;
+	color: #333;
+	box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
+				inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+				inset -4px -4px 10px rgba(255, 255, 255, 1),
+				4px 4px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	right: 155px;
+}
+
+.main input[id="passText"]
+{
+	position: relative;
+	width: 100%;
+	height: 60px;
+	border: none;
+	margin: 15px 0 20px;
+	background: transparent;
+	outline: none;
+	padding: 0 24px;
+	font-size: 30px;
+	letter-spacing: 2px;
+	box-sizing: border-box;
+	color: #333;
+	box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
+				inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+				inset -4px -4px 10px rgba(255, 255, 255, 1),
+				4px 4px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+}
+
+.main input[id="usernameText"]
+{
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	border: none;
+	background: transparent;
+	outline: none;
+	padding: 0 24px;
+	font-size: 30px;
+	letter-spacing: 2px;
+	box-sizing: border-box;
+	color: #333;
+	box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
+				inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+				inset -4px -4px 10px rgba(255, 255, 255, 1),
+				4px 4px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	right: 1px;
+}
+.main .username
+{
+	color: #696969;
+	cursor: pointer;
+	top: 460px;
+	width: 60%;
+	left: 180px;
+	position: absolute;
+	font-weight: 600;
+	font-size: 26px;
+	border-radius: 10px;
+	height: 60px;
+	outline: none;
+}
+.main .username:hover {
+  background-color: #3e8e41;
+  color: white;
+  transition: 0.5s
+}
+
+.main img[id="1"]
+{
+	position: absolute;
+	left: 400px;
+	bottom: 185px;
+	opacity: 0.3;
+}
+
+.main img[id="2"]
+{
+	position: absolute;
+	left: 400px;
+	bottom: -27px;
+	opacity: 0.3;
+}
+
+.main img:hover
+{
+	opacity: 1;
+	transition: 0.5s;
+}
+
+.main .tooltiptext1 {
+  position: relative;
+  display: inline-block;
+}
+
+.main .tooltiptext1
+{
+	width: 140px;
+  	background-color: #555;
+  	color: #fff;
+  	text-align: center;
+  	border-radius: 6px;
+  	padding: 5px;
+  	position: absolute;
+  	z-index: 1;
+  	margin-left: -75px;
+  	opacity: 0;
+  	transition: opacity 0.3s;
+	bottom: 230px;
+	right: -28px;
+}
+
+.main .tooltiptext1::after
+{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.main img[id="1"]:hover .tooltiptext1
+{
+  	visibility: visible;
+  	opacity: 1;
+}
+
+.main .tooltiptext2
+{
+	width: 140px;
+  	background-color: #555;
+  	color: #fff;
+  	text-align: center;
+  	border-radius: 6px;
+  	padding: 5px;
+  	position: absolute;
+  	z-index: 2;
+  	margin-left: -75px;
+  	opacity: 1;
+  	transition: opacity 0.3s;
+	top: 333px;
+	right: -28px;
+}
+.home
+{
+	position: absolute;
+	top: 20px;
+	right: 50px;
+}
+
+.home:hover
+{
+	top: 15px;
+	transition: 0.5s;
+}
+
+.homeA
+{
+	position: absolute;
+	top: 20px;
+	right: 50px;
+}

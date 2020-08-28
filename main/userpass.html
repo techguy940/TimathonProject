@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Username Password Generator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://rawgit.com/Marak/faker.js/master/examples/browser/js/faker.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles2.css">
+	<script src="https://kit.fontawesome.com/30a0a2ce51.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<a href="index.html"><img src='home-page (3).png' alt="Return to Home" class="home"></a>
+	<div class="main">
+		<h2>Generate Random Username/Password</h2>
+		<br><br>
+		<input type="text" id="passText" readonly="" placeholder="Password"></input>
+		<img src="copy.png" id="1" onclick="copyPass();" alt="Copy">
+		<br>
+		<input type="text" id="passLength" placeholder="Length"></input>
+		<button class="pass" onclick="genPassword();">Generate Password</button>
+		<br><br><br>
+		<input type="text" id="usernameText" readonly="" placeholder="Username"></input>
+		<img src="copy.png" id="2" onclick="copyUsername();" alt="Copy">
+		<br>
+		<button class="username" onclick="genUserName();">Generate Username</button>
+	</div>
+</body>
+<script type="text/javascript">
+	function genUserName(){
+		var new_username = faker.name.findName().split(" ")[0];
+		var a = Math.floor(Math.random() * 100);
+		document.getElementById("usernameText").value = new_username + a;
+		}
+
+	function genPassword(){
+		var printable = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&\'()*+,-./:;<=>?@"
+		var Length = document.getElementById("passLength").value;
+		if (Length === ''){
+			Length = 8
+		}else {
+			Length = parseInt(Length);
+			if (Length.toString() === 'NaN'){
+				Length = 8
+			}
+		}
+		console.log(Length);
+		var result = '';
+		for ( var i = 0; i < Length; i++ ) {
+      		result += printable.charAt(Math.floor(Math.random() * printable.length));
+  		}
+
+  		document.getElementById('passText').value = result;
+
+	}
+
+	function copyPass(){
+		var p = document.getElementById("passText");
+		p.select();
+		p.setSelectionRange(0, 99999);
+		document.execCommand('copy');
+	}
+
+	function copyUsername(){
+		var p = document.getElementById("usernameText");
+		p.select();
+		p.setSelectionRange(0, 9999);
+		document.execCommand('copy');
+	}
+</script>
+</html>

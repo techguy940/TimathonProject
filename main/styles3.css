@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+	background: #f8f8f8;
+	user-select: none;
+}
+
+.main
+{
+	text-align: center;
+	justify-content: center;
+	width: 450px;
+	position: relative;
+}
+
+.main h2
+{
+	height: 15vh;
+	font-size: 40px;
+}
+
+.main .submit
+{
+	text-decoration: none;
+	font-size: 20px;
+	width: 40%;
+	height: 40%;
+	border-radius: 8px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #ed3330;
+	padding: 20px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+	cursor: pointer;
+	left: 300px;
+	position: relative;
+	top: 250px;
+}
+
+.main .submit:hover
+{
+	background: #008000;
+	transition: all 0.4s ease 0s;
+}
+
+.main .qr
+{
+	position: absolute;
+	left: -100px;
+	top: 100px;
+}
+
+.main .downloadDiv
+{
+	position: absolute;
+	top: 360px;
+	left: -45px;
+	font-size: 20px;
+	letter-spacing: 1px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #00B2EE;
+	padding: 20px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.main .active
+{
+	visibility: visible;
+}
+
+.main .downloadDiv a
+{
+	text-decoration: none;
+}
+
+.main .downloadDiv:hover
+{
+	background: #008000;
+	font-weight: 600;
+	transition: 0.5s;
+	letter-spacing: 2px;
+}
+
+.main .qrText
+{
+	position: absolute;
+	left: 350px;
+	resize: none;
+	height: 240px;
+	top: 106px;
+	width: 350px;
+	font-size: 30px;
+	text-indent: 4px;
+}
+
+.qrText::placeholder {
+    font-size: 20px;
+    text-indent: 4px;
+    line-height: 2;
+    overflow: visible;
+}
+
+.home
+{
+	position: absolute;
+	top: 20px;
+	right: 50px;
+}
+
+.home:hover
+{
+	top: 15px;
+	transition: 0.5s;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meme Generator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles5.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+
+</head>
+<body a link="black" vlink="black">
+	<a href="index.html" class="homeA"><img src='home-page (3).png' alt="Return to Home" class="home"></a>
+	<div class="main">
+		<h2>Meme Generator</h2>
+		<img src="" id="memeImgPreview" class="memeImgPreview" style="visibility: hidden;">
+		<input type="text" id="imageInput" placeholder="Put Image URL">
+
+		<textarea class="topText" id="topText" placeholder="Write Top Text Here"></textarea>
+		<input type="range" id="topTextSize" min="0.01" max="0.50" value="0.20" step="0.01">
+		<textarea class="bottomText" id="bottomText" placeholder="Write Bottom Text Here"></textarea>
+		<input type="range" id="bottomTextSize" min="0.01" max="0.50" value="0.20" step="0.01">
+		<button class="submit" id="submit" onclick="genMeme();">Generate Meme</button>
+	</div>
+</body>
+<script type="text/javascript">
+
+	function genMeme(){
+		var url = document.getElementById("imageInput");
+		var topText = document.getElementById("topText");
+		var bottomText = document.getElementById("bottomText");
+		var memeImgPreview = document.getElementById("memeImgPreview");
+		var u = "http://127.0.0.1:5000/"
+		fetch(u, {headers: {"topText": topText.value, "bottomText": bottomText.value, "imgUrl": url.value}})
+		.then(res => res.json())
+		.then(data => memeImgPreview.src = data['link'])
+		.catch(err => console.log("Error " + err))
+		memeImgPreview.style.visibility = "visible";
+	}
+
+	function downloadMeme(){
+		document.getElementById("download").setAttribute('href', document.getElementById("memeImgPreview").src);
+	}
+</script>
+</html>

@@ -28,7 +28,7 @@
 		var topText = document.getElementById("topText");
 		var bottomText = document.getElementById("bottomText");
 		var memeImgPreview = document.getElementById("memeImgPreview");
-		var u = "http://127.0.0.1:5000/"
+		var u = "http://vps1.blep.space/"
 		fetch(u, {headers: {"topText": topText.value, "bottomText": bottomText.value, "imgUrl": url.value}})
 		.then(res => res.json())
 		.then(data => memeImgPreview.src = data['link'])
